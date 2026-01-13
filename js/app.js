@@ -43,3 +43,13 @@ generateBtn.addEventListener("click", () => {
 
   outputPrompt.value = prompt;
 });
+// ===== KIRIM GAMBAR KE VIDEO ENGINE =====
+const imageInput = document.getElementById("imageInput");
+
+imageInput.addEventListener("change", () => {
+  poseImages.length = 0; // reset
+  for (let file of imageInput.files) {
+    addPoseImage(file);
+  }
+  alert(`${poseImages.length} gambar pose siap dibuat video`);
+});
